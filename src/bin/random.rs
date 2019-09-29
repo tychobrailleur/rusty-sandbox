@@ -1,4 +1,4 @@
-use rand::{RngCore, ChaChaRng};
+use rand::{RngCore, ChaChaRng, FromEntropy};
 
 
 /*
@@ -37,9 +37,12 @@ zero but may be set via set_word_pos and set_stream.
 
 fn main() {
     let mut ra = ChaChaRng::new_unseeded();
+
+    // Always prints: 2917185654 2419978656
     println!("{:?}", ra.next_u32());
     println!("{:?}", ra.next_u32());
+
+    let mut rb = ChaChaRng::from_entropy();
+    println!("{:?}", rb.next_u32());
+    println!("{:?}", rb.next_u32());
 }
-
-
-// Always prints: 2917185654 2419978656
