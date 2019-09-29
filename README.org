@@ -1,0 +1,9 @@
+Basic crypto experiments in Rust
+
+
+* Execute different main
+
+  #+begin_src
+cargo build --bin hash
+cargo run --bin hash
+  #+end_src
